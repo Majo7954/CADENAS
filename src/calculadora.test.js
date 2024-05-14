@@ -24,4 +24,8 @@ describe("Calcular Cadena", () => {
   it("devuelve la suma de números usando delimitador especificado", () => {
     expect(CalculadoraDe("//[;]0;7;4")).toEqual(11);
   });
+
+  it("ignora los números mayores a 1000", () => {
+    expect(CalculadoraDe("2,1001")).toEqual(2);
+  });
 });

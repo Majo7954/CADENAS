@@ -13,17 +13,19 @@ function CalculadoraDe(cadena) {
     cadena = cadena.substring(delimitadorFinalFinal + 3);
   }
 
-  // Dividimos la cadena usando el delimitador personalizado o los delimitadores predeterminados
   const regex = new RegExp(`[${delimitador}\\n-]+`);
   numeros = cadena.split(regex);
 
-  // Convertimos los elementos en números y sumamos
-  const suma = numeros.reduce((total, num) => total + parseInt(num), 0);
+  const suma = numeros.reduce((total, num) => {
+    const parsedNum = parseInt(num);
+    return !isNaN(parsedNum) && parsedNum <= 1000 ? total + parsedNum : total;
+  }, 0);
 
   return suma;
 }
 
 export default CalculadoraDe;
+
 
 
 
