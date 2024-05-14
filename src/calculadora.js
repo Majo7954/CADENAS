@@ -3,10 +3,8 @@ function CalculadoraDe(cadena) {
     return 0;
   }
 
-  const numeros = cadena.split(",");
-  const suma = numeros.reduce((total, num) => total + parseInt(num), 0);
-
-  return suma;
+  let numeros = cadena.split(/[,-]/).map(Number);
+  return numeros.reduce((total, num) => total + num, 0);
 }
 
 export default CalculadoraDe;
