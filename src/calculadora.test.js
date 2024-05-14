@@ -20,4 +20,8 @@ describe("Calcular Cadena", () => {
   it("devuelve la suma de números separados por coma o guion", () => {
     expect(CalculadoraDe("1,2-3")).toEqual(6);
   });
+
+  it("devuelve la suma de números usando delimitador especificado", () => {
+    expect(CalculadoraDe("//[;]0;7;4")).toEqual(11);
+  });
 });
