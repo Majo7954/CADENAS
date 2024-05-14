@@ -1,9 +1,12 @@
-function calcularCadena(cadena) {
+function CalculadoraDe(cadena) {
   if (cadena === "") {
     return 0;
   }
 
-  return parseInt(cadena);
+  const numeros = cadena.split(",");
+  const suma = numeros.reduce((total, num) => total + parseInt(num), 0);
+
+  return suma;
 }
 
-export default calcularCadena;
+export default CalculadoraDe;
