@@ -14,6 +14,6 @@ describe("Calcular Cadena", () => {
   });
 
   it("devuelve la suma de tres números separados por coma", () => {
-    expect(CalculadoraDe("1,2,3")).toEqual(6);
+    expect(calcularCadena("1,2,3")).toEqual(6);
   });
 });
