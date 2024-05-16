@@ -16,12 +16,20 @@ function SumadoraDe(cadena) {
   const expresionDelimitadores = new RegExp(`[${delimitador}\\n-]+`);
   numeros = cadena.split(expresionDelimitadores);
 
-  const suma = numeros.reduce((total, num) => {
-    const parsedNum = parseInt(num);
-    return !isNaN(parsedNum) && parsedNum <= 1000 ? total + parsedNum : total;
-  }, 0);
+  const suma = CalcularTotalDe(numeros);
 
   return suma;
+}
+
+function CalcularTotalDe(numeros) {
+  return numeros.reduce((total, num) => {
+    const numParseado = parseInt(num);
+    if (!isNaN(numParseado) && numParseado <= 1000) {
+      return total + numParseado;
+    } else {
+      return total;
+    }
+  }, 0);
 }
 
 export default SumadoraDe;
