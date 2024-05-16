@@ -7,14 +7,14 @@ function SumadoraDe(cadena) {
   let numeros = [];
 
   if (cadena.startsWith("//")) {
-    const delimitadorFinal = cadena.indexOf("[");
-    const delimitadorFinalFinal = cadena.indexOf("]");
-    delimitador = cadena.substring(delimitadorFinal + 1, delimitadorFinalFinal);
-    cadena = cadena.substring(delimitadorFinalFinal + 3);
+    const indiceInicioDelimitador = cadena.indexOf("[");
+    const indiceFinDelimitador = cadena.indexOf("]");
+    delimitador = cadena.substring(indiceInicioDelimitador + 1, indiceFinDelimitador);
+    cadena = cadena.substring(indiceFinDelimitador + 3);
   }
 
-  const regex = new RegExp(`[${delimitador}\\n-]+`);
-  numeros = cadena.split(regex);
+  const expresionDelimitadores = new RegExp(`[${delimitador}\\n-]+`);
+  numeros = cadena.split(expresionDelimitadores);
 
   const suma = numeros.reduce((total, num) => {
     const parsedNum = parseInt(num);
