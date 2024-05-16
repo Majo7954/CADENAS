@@ -1,4 +1,4 @@
-function CalculadoraDe(cadena) {
+function SumadoraDe(cadena) {
   if (cadena === "") {
     return 0;
   }
@@ -24,7 +24,7 @@ function CalculadoraDe(cadena) {
   return suma;
 }
 
-export default CalculadoraDe;
+export default SumadoraDe;
 
 
 
